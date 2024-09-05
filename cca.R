@@ -47,7 +47,8 @@ len=sum(indexlower)
 
 #riskfactors=matrix(NA,  dim(response)[1], (dim(response)[2]-1))
 riskfactors=response [ , 2:(dim(response)[2]-1) ]
-riskfactors = riskfactors %>% select(-c( "DOB", "CT.Date"))
+# riskfactors = riskfactors %>% select(-c( "DOB", "CT.Date"))
+riskfactors <- riskfactors[,-c(6,7)]
 table(response$Genotype)
 table(response$Diet)
 
